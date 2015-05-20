@@ -19,3 +19,4 @@ Il est nécessaire d'avoir installé Node.js, version >=0.10.
 Pour installer Express et ses dépendences, taper dans un terminal
 
     npm install
+# aws_project
