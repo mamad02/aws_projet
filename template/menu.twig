@@ -1,0 +1,25 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style/calendrier.css" type="text/css" />
+        <link rel="stylesheet" href="../style/bootstrap-3.3.4-dist/css/bootstrap.css" type="text/css" />
+        <title>Menu</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-default">
+            {% if not session %}
+                <div id="offline">
+                        <span class="label navbar-text"><a class="navbar-link" style="font-size: 200%" href="/">Calendrier  </a> </li></span>
+                        <span class="label navbar-text"><a class="navbar-link" style="font-size: 200%" href="/signup">Inscription </a> </span>
+                        <span class="label navbar-text"><a class="navbar-link" style="font-size: 200%" href="/login">Connexion </a> </span>
+                </div>
+            {% endif %}
+            
+            {% if session %}
+                <span class="label navbar-text"><a class="navbar-link" style="font-size: 200%" href="/logout">Déconnexion </a></span>
+            {% endif %}
+            
+        </nav>
+    </body> 
+</html>

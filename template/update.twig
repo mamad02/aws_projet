@@ -1,0 +1,53 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style/calendrier.css" type="text/css" />
+        <link rel="stylesheet" href="../style/bootstrap-3.3.4-dist/css/bootstrap.css" type="text/css" />
+        <title>Modification</title>
+        <style>
+            option {
+                padding: 1px 2ex 1px 0;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        
+        {% include 'menu.twig' %}
+        
+        <h1 class="text-center">Modifier evenement :{{ event.title_event }}</h1>
+        
+        <form class="update" method="POST">
+
+                          <div class="form-group">
+                              <h3>Titre de l'evenement:</h3>
+                              <input type="text" id="titre" name="titre" value="{{ event.title_event }}"/>
+                          </div>
+
+                          <div class="form-group">
+                              <h3>Description:</h3>
+                              <textarea id="description" name="description"  > {{ event.desc_event }} </textarea>
+                          </div>
+                     
+                         <input type="hidden" id="id_event" name="id_event" value="{{ event.id_event }}"/>
+                         <input type="hidden" id="doUpdate" name="doUpdate" value="1"/>
+                         
+                         <div class="form-group">
+                             <input class="btn btn-default btn-sm" type="button" value="Retour" onclick="history.go(-1)">
+                             <input class="btn btn-default btn-sm" type="submit" id='valider' value="Valider"/>
+                         </div>
+
+              </form>
+
+        {% if error %}
+        <div class="alert alert-danger" role="alert"><p class="error">Erreur : {{ error }}</p></div>
+        {% endif %}
+        
+        </div>
+        <div class="col-md-2"></div>
+    </body> 
+</html>

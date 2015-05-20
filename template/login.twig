@@ -1,0 +1,45 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../style/calendrier.css" type="text/css" />
+        <link rel="stylesheet" href="../style/bootstrap-3.3.4-dist/css/bootstrap.css" type="text/css" />
+        <title>Connexion</title>
+        <style>
+            option {
+                padding: 1px 2ex 1px 0;
+            }
+        </style>
+
+    </head>
+    <body>
+        
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+        
+        {% include 'menu.twig' %}
+        
+        <h1 class="text-center">Connexion</h1>
+        
+        <form class="login" method="post">
+            <fieldset>
+                <div class="form-group">
+                    <input type="text" name="login"
+                    placeholder="Pseudo" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password"
+                    placeholder="Mot de passe" required>
+                </div>
+                <input type="submit" value="Valider">
+            </fieldset>
+        </form>
+ 
+        {% if error %}
+        <div class="alert alert-danger" role="alert"><p class="error">Erreur : {{ error }}</p></div>
+        {% endif %}
+        
+        </div>
+        <div class="col-md-2"></div>
+    </body> 
+</html>
